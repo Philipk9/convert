@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>this is a test</title>
+    <!-- <link href="styles.scss" rel="stylesheet/scss" type="text/css" /> -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="sa">
+      <svg
+        class="co"
+        width="80px"
+        height="80px"
+        viewBox="0 0 80 80"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <title>Artboard</title>
+        <g
+          id="Artboard"
+          stroke="none"
+          stroke-width="2"
+          fill="none"
+          fill-rule="evenodd"
+        >
+          <g id="or-group-copy" transform="translate(5.000000, 5.000000)">
+            <circle
+              class="outLine"
+              id="Oval"
+              stroke="#333333"
+              stroke-width="2"
+              fill="none"
+              cx="35.5"
+              cy="35.5"
+              r="35.8"
+            ></circle>
+            <path
+              class="arrows"
+              d="M30.2110434,35.1375905 C30.3474235,35.2533191 30.4260396,35.4231225 30.4260396,35.6019625 L30.4269382,41.0573109 C31.7694972,41.0640168 32.979235,41.0681681 34.0561518,41.0697648 L35.9197211,41.0697648 C36.8306115,41.0681681 37.6086809,41.0640168 38.2539292,41.0573109 C40.7945943,41.0309064 45.0045551,41.7661467 50.2071429,38.0434759 C50.2060702,46.9499307 41.2184498,47.2263398 38.2539292,47.1807861 C36.2775821,47.150417 33.6685852,47.1352324 30.4269382,47.1352324 L30.421836,52.6409071 C30.421836,52.9772998 30.1490705,53.25 29.8125973,53.25 C29.632997,53.25 29.4625473,53.1707737 29.3467887,53.0334886 L21.4792875,44.5492138 C21.2396126,44.264969 21.240313,43.8492374 21.4809444,43.5658015 L29.3523178,35.2078143 C29.5700519,34.9513487 29.9545165,34.9199084 30.2110434,35.1375905 Z M41.6945456,16.7357143 C41.8741458,16.7357143 42.0445956,16.8149406 42.1603542,16.9522256 L50.0278553,25.4365005 C50.2675303,25.7207453 50.2668298,26.1364768 50.0261985,26.4199128 L42.1548251,34.7779 C41.937091,35.0343656 41.5526264,35.0658058 41.2960994,34.8481238 C41.1597193,34.7323952 41.0811033,34.5625918 41.0811033,34.3837517 L41.0802046,28.9284034 C39.5698258,28.9208592 38.2275487,28.9165483 37.0533732,28.9154705 L35.9352317,28.9154705 C34.873124,28.9165483 33.979118,28.9208592 33.2532137,28.9284034 C30.7125485,28.9548079 26.5025878,28.2195676 21.3,31.9422383 C21.3010726,23.0357836 30.2886931,22.7593745 33.2532137,22.8049282 C34.9970493,22.8317244 37.2334325,22.8466988 39.9623632,22.8498514 L41.0802046,22.8504819 L41.0802046,22.8504819 L41.0853069,17.3448072 C41.0853069,17.0084145 41.3580723,16.7357143 41.6945456,16.7357143 Z"
+              id='"or"-icon'
+              fill="#333333"
+            ></path>
+          </g>
+        </g>
+      </svg>
+
+      <div class="sa-success">
+        <div class="sa-success-tip"></div>
+        <div class="sa-success-long"></div>
+        <div class="sa-success-placeholder"></div>
+        <div class="sa-success-fix"></div>
+      </div>
+
+      <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle">
+          <!-- Loading<span>.</span><span>.</span><span>.</span> -->
+        </div>
+      </div>
+      <div class="para">
+        <h2>Convert your miles</h2>
+        <!-- <br /> -->
+
+        <p>Lorem Ipum dolorem this is just a dumy text for test puprose</p>
+      </div>
+      <button id="ctaID" class="cta">
+        <!-- <span>convert now</span> -->Convert now
+      </button>
+    </div>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".cta").click(function () {
+        $(".arrows").css("animation-play-state", "running");
+        $(".outLine").css("animation-play-state", "running");
+        $(".loader").css("animation-play-state", "running");
+        $(".sa-success-tip").css("animation-play-state", "running");
+        $(".sa-success-long").css("animation-play-state", "running");
+      });
+    });
+
+    $(function () {
+      // Shorthand for $( document ).ready()
+      $(".trigger").click(function (e) {
+        e.preventDefault();
+        $(this)
+          .addClass("animation")
+          .one(
+            "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",
+            function () {
+              $(this).removeClass("animation");
+            }
+          );
+      });
+    });
+  </script>
+</html>
